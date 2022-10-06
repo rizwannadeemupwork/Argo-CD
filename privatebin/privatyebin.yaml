@@ -1,0 +1,20 @@
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: privatebin-test
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: rizwan-test
+  source:
+    repoURL: https://github.com/rizwannadeemupwork/privatebin-test.git
+    targetRevision: master
+    path: ./helm-chart/
+    helm:
+      valueFiles:
+        - values/values.yaml
+
+  destination:
+    namespace: default
