@@ -11,7 +11,7 @@ spec:
   source:
     repoURL: https://github.com/rizwannadeemupwork/nginx.git
     targetRevision: master
-    path: ./
+    path: .
 
   destination:
     name: docker-desktop
