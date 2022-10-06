@@ -1,0 +1,18 @@
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: rizwan-test
+  source:
+    repoURL: https://github.com/rizwannadeemupwork/nginx.git
+    targetRevision: master
+    path: ./
+
+  destination:
+    name: docker-desktop
+    namespace: default
