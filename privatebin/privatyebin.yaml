@@ -17,5 +17,4 @@ spec:
         - values/values.yaml
 
   destination:
-    name: docker-desktop
     namespace: default
